@@ -1,0 +1,16 @@
+<html lang="en">
+---
+	images = {
+	  - image_path: https://farm5.staticflickr.com/4157/34790047535_9cc9baa2ad_k.jpg
+		title: Apple Pie
+	  - image_path: https://farm5.staticflickr.com/4157/34790047535_9cc9baa2ad_k.jpg
+		title: Birthday Cake
+	  - image_path: https://farm5.staticflickr.com/4157/34790047535_9cc9baa2ad_k.jpg
+	  title: Black Forest}
+---
+	<ul class="photo-gallery">
+	  {% for image in images %}
+	      <li><img src="{{ image.image_path }}" alt="{{ image.title}}"/></li>
+	        {% endfor %}
+	</ul>
+</html>
