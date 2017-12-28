@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href={{ "/assets/header.css" | relative_url}}/>
+		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	</head>
+	<div id="cssmenu">
+		<ul>
+			{% assign mypages = site.pages | sort: "order" %}
+				{% for p in mypages %}
+					{% if p.order %}
+					<li><a href="{{ p.url | absolute_url }}"{% if p.url == page.url %}class="active"{% endif %}>
+						{{ p.title }}</a></li>
+					{% endif %}
+				{% endfor %}
+		</ul>
+	</div>
+	<body>
+		{{ content }}
+	</body>
+</html>
