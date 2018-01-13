@@ -1,7 +1,9 @@
 ---
-title: About Page
+title: About
 layout: default
 order: 2
 ---
-# {{ page.url }}
 Hello, This is the second page!
+
+
+This website was made using a template from [HTML5 UP](http://html5up.net)
