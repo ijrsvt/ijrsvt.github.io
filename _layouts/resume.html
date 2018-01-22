@@ -1,0 +1,40 @@
+---
+layout: base
+---
+<!--
+	Categories:	
+		Jobs		Full Screen Things
+		Projects	Side-by-side
+		Organizations	LANDED-Small bubbles
+		Skills?	
+		Accomplishments	LANDED-Small bubbles
+-->
+
+{% assign reslist = site.resitems | sort: "order" %}
+{% for job in reslist %}
+	{% if job.category == "job" %}
+		<section id="one" class="wrapper spotlight style1">
+		<div class="inner">
+		<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+		<div class="content">
+			<h1 class="major">{{ job.title }}</h2>
+			<h3 class="major">{{ job.company }}</h2>
+			<h3 class="major">{{ job.startdate }} -> {{ job.enddate }} </h3>
+			<p>{{ job.content }}</p>
+		</div>
+		</div>
+		</section>
+	{% endif %}
+{% endfor %}
+<!--
+<section id="one" class="wrapper spotlight style1">
+	<div class="inner">
+		<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+			<div class="content">
+				<h2 class="major">job.title</h2>
+					<p>{{ content }}</p>
+					<a href="#" class="special">Learn more</a>
+			</div>
+	</div>
+</section>
+-->
