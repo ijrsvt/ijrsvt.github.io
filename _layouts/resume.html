@@ -9,11 +9,10 @@ layout: base
 		Skills?	
 		Accomplishments	LANDED-Small bubbles
 -->
-
 {% assign reslist = site.resitems | sort: "order" %}
 {% for job in reslist %}
 	{% if job.category == "job" %}
-		<section id="one" class="wrapper spotlight style1">
+	<section id="{% cycle 'one', 'two', 'three', 'four' %}" class="wrapper{% cycle " ", " alt " %}spotlight style{% cycle '1', '2', '3', '4' %}">
 		<div class="inner">
 		<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
 		<div class="content">
