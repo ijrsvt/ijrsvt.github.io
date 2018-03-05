@@ -9,31 +9,19 @@ layout: base
 		Skills?	
 		Accomplishments	LANDED-Small bubbles
 -->
-{% assign reslist = site.resitems | sort: "order" %}
+{% assign reslist = site.resitems | sort: "order" | reverse %}
 {% for job in reslist %}
 	{% if job.category == "job" %}
 	<section id="{% cycle 'one', 'two', 'three', 'four' %}" class="wrapper{% cycle " ", " alt " %}spotlight style{% cycle '1', '2', '3', '4' %}">
 		<div class="inner">
 		<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
 		<div class="content">
-			<h1 class="major">{{ job.title }}</h2>
-			<h3 class="major">{{ job.company }}</h2>
-			<h3 class="major">{{ job.startdate }} -> {{ job.enddate }} </h3>
+			<h1 class="major">{{ job.title }}</h1>
+			<h3 class="alt">{{ job.company }}</h3>
+			<h3 class="alt">{{ job.startdate }} -> {{ job.enddate }} </h3>
 			<p>{{ job.content }}</p>
 		</div>
 		</div>
 		</section>
 	{% endif %}
 {% endfor %}
-<!--
-<section id="one" class="wrapper spotlight style1">
-	<div class="inner">
-		<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-			<div class="content">
-				<h2 class="major">job.title</h2>
-					<p>{{ content }}</p>
-					<a href="#" class="special">Learn more</a>
-			</div>
-	</div>
-</section>
--->
