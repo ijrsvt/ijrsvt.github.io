@@ -25,3 +25,21 @@ layout: base
 		</section>
 	{% endif %}
 {% endfor %}
+
+<section id="four" class="wrapper alt style1">
+	<div class="inner">
+		<h2 class="major">Projects</h2>
+		<section class="features">
+{% for project in reslist %}
+	{% if project.category == "project" %}
+		<article>
+			<a class="image"><img src="images/pic01.jpg"></a>
+			<h3 class="major">{{ project.title }}</h3>
+			<p>{{ project.content }}</p>
+			<a href="{{ project.extralink }}" class="special">{{ project.extras }}</a>
+		</article>
+	{% endif %}
+{% endfor %}
+		</section>
+	</div>
+</section>
