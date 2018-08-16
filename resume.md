@@ -1,7 +1,7 @@
 ---
 title: Resume
-layout: default
+layout: resume
 order: 3
 ---
-This page will eventually need its own HTML template using the "article" theme...I think
+This is a incrementally updated resume that never stops growing. Unlike my professional resume (which is condensed to a page or so), this resume will keep expanding.
 
