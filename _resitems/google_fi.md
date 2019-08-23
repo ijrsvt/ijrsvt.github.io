@@ -6,4 +6,4 @@ startdate: May, 2018
 enddate: August, 2018
 order: 5
 ---
-Worked on Project Fi!!!!
+Worked on the Project Fi (now Google Fi) backend team.
