@@ -1696,7 +1696,6 @@
 		-webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-		border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
 		color: #ffffff;
 		text-decoration: none;
 	}
@@ -3941,7 +3940,7 @@ MenuBar
   bottom: 0;
   height: 3px;
   width: 0;
-  background: #333333;
+  background: #333333; /* After of underline */
   -webkit-transition: width .25s;
   -moz-transition: width .25s;
   -ms-transition: width .25s;
