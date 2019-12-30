@@ -13,7 +13,9 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Ian Rodney's Website
+title: Ian Rodney's site
+subtitle: My online landing page?
+headline: Ian Rodney
 email: ian.rodney@hkn.mu
 description: Personal website for Ian Rodney. This site has (eventually will have) some basic personal background and photos.
 baseurl: "" # the subpath of your site, e.g. /blog
