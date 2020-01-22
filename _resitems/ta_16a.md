@@ -1,5 +1,6 @@
 ---
 title: Electrical Engineering Reader/Tutor
+shortTitle: EE Reader/Tutor
 company: UC Berkeley EECS Department
 category: job
 startdate: January, 2017
