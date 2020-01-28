@@ -1,45 +1,82 @@
 ---
 layout: base
 ---
-<!--
-	Categories:	
-		Jobs		Full Screen Things
-		Projects	Side-by-side
-		Organizations	LANDED-Small bubbles
-		Skills?	
-		Accomplishments	LANDED-Small bubbles
--->
-{% assign reslist = site.resitems | sort: "order" | reverse %}
-{% for job in reslist %}
-	{% if job.category == "job" %}
-	<section id="{% cycle 'one', 'two', 'three', 'four' %}" class="wrapper{% cycle " ", " alt " %}spotlight style{% cycle '1', '2', '3', '4' %}">
-		<div class="inner">
-		<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-		<div class="content">
-			<h1 class="major">{{ job.title }}</h1>
-			<h3 class="alt">{{ job.company }}</h3>
-			<h3 class="alt">{{ job.startdate }} -> {{ job.enddate }} </h3>
-			<p>{{ job.content }}</p>
-		</div>
-		</div>
-		</section>
-	{% endif %}
-{% endfor %}
+			<!-- Main -->
+				<div class="wrapper style1">
 
-<section id="four" class="wrapper alt style1">
-	<div class="inner">
-		<h2 class="major">Projects</h2>
-		<section class="features">
-{% for project in reslist %}
-	{% if project.category == "project" %}
-		<article>
-			<a class="image"><img src="images/pic01.jpg"></a>
-			<h3 class="major">{{ project.title }}</h3>
-			<p>{{ project.content }}</p>
-			<a href="{{ project.extralink }}" class="special">{{ project.extras }}</a>
-		</article>
-	{% endif %}
-{% endfor %}
-		</section>
-	</div>
-</section>
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-8 col-12-mobile" id="content">
+								<article id="main">
+									<p>
+									I'm currently in my last semester of Undergrad at UC Berkeley, studiying <strike>EE</strike>CS. I am more of a systems person than anything, mostly focused on Computer Networking and Security. 
+									</p>
+									<section>
+										<header>
+											<h3>Work Experience</h3>
+										</header>
+				<div class="row">
+					{% assign reslist = site.resitems | sort: "order" | reverse %}
+										{% for job in reslist %}
+											{% if job.category == "job" %}
+												<article class="col-4 col-12-mobile special">
+								<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
+								<header>
+									<h3><a href="{{ job.website }}">{{ job.title }}</a></h3>
+									<h6 class="alt">{{ job.company }}</h3>
+									<h6 class="alt">{{ job.startdate }} -> {{ job.enddate }} </h3>
+								</header>
+								<p>
+									{{ job.content }}
+								</p>
+							</article>
+						{% endif %}
+					{% endfor %}
+							
+				</div>
+								</article>
+									</section>
+							</div>
+							<div class="col-4 col-12-mobile" id="sidebar">
+								<section>
+									<header>
+										<h3>A few of my projects:</h3>
+									</header>
+									<p>
+									These include research, industry, class & personal projects.
+									</p>
+									<div class="row gtr-50">
+									{% for project in reslist %}
+										{% if project.category == "project" %}
+										
+								{% if project.image %}
+									
+										<div class="col-8">
+											<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
+										</div>
+								{% endif %}
+
+										<div class="col-8">
+											<h4>{{ project.title }}</h4>
+											<p>
+											{{ project.content }}
+											</p>
+<a href="{{ project.extralink }}" class="button">{{ project.extras }}</a>
+										</div>
+												
+											</article>
+										{% endif %}
+									{% endfor %}
+
+									</div>
+								<!--	THIS IS IF I WANT TO HAVE AN OPTION TO EXPAND
+									<footer>
+										<a href="#" class="button">Magna Adipiscing</a>
+									</footer> -->
+								</section>
+							</div>
+						</div>
+						<hr />
+					</div>
+
+				</div>
