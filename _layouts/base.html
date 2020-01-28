@@ -12,7 +12,11 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+	{% if page.url == "/" %}
 	<body class="homepage is-preload">
+	{% else %}
+	<body>
+	{% endif %}
 		<div id="page-wrapper">
 
 			<!-- Header -->
