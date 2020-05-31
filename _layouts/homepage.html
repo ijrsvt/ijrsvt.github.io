@@ -19,7 +19,7 @@ layout: base
 	{% for job in reslist %}
 		{% if job.category == "job" %}
 			<article>
-				<a href="resume.html" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+				<a href="resume.html" class="image featured"><img src="{{ job.imageurl }}" alt="" style="max-height:100px;width:auto;margin-left:auto;margin-right:auto;display:flex"/></a>
 				<header>
 					{% if job.shortTitle %}
 					<h3><a href="{{ job.website }}">{{ job.shortTitle }}</a></h3>
