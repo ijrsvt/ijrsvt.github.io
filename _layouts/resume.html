@@ -21,7 +21,7 @@ layout: base
 										{% for job in reslist %}
 											{% if job.category == "job" %}
 												<article class="col-4 col-12-mobile special">
-								<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
+								<a href="#" class="image featured"><img src="{{ job.imageurl }}" alt="" style="max-width:100%;max-height:100px;width:auto"/></a>
 								<header>
 									<h3><a href="{{ job.website }}">{{ job.title }}</a></h3>
 									<h6 class="alt">{{ job.company }}</h3>
