@@ -4,8 +4,8 @@ company: Google
 category: job
 startdate: May, 2019
 enddate: August, 2019
-order: 6
-imageurl: https://www.gstatic.com/devrel-devsite/prod/vf4ca28c48392b1412e7b030290622a0dd55b62dec1202c59f119b1e23227c988/cloud/images/cloud-logo.svg
+order: 7
+imageurl: https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/2560px-Google_Cloud_logo.svg.png
 ---
 
 Worked on the NetInfra host networking team.
