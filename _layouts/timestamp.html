@@ -1,0 +1,101 @@
+<style>
+    table {
+        /* width: 100%; */
+        border: 1px solid black; /* Add border style */
+        border-collapse: collapse; /* Optional: Collapse borders into a single border */
+
+    }
+
+    th, td {
+        width: 33.33%;
+        font-size: xx-large;
+        border: 1px solid black; /* Add border style */
+        padding: 8px; /* Optional: Add padding for better spacing */
+    }
+</style>
+
+<head>
+    <script src="assets/js/wasm/wasm_exec.js"></script>
+    <script>
+
+        divisionsToType = {
+            "1" : "Microsecond",
+            "2" : "Nanosecond",
+        }
+
+        multiplicationsToType = {
+            "1": "Seconds",
+        }
+
+        function padDelta(a,b) {
+            result = b - a
+            expectedSize = Math.max(String(a).length, String(b).length)
+            if (String(result).length < expectedSize) {
+                return "0".repeat(expectedSize - String(result).length) + result
+            }
+            return String(result)
+
+        }
+        
+        function getTimestamp() {
+            rawTimestamp = (new URLSearchParams(window.location.search)).get("timestamp")
+            timestamp = rawTimestamp.replaceAll(/[^0-9]/g, "-").split("-").filter((i) => i.length > 0)[0]
+            if (timestamp === undefined) {
+                console.log("No timestamp found in %s", rawTimestamp)
+                return
+            }
+            timestampInt = parseInt(timestamp)
+            date = new Date(timestampInt)
+            now = new Date().getTime()
+            numDivisions = 0 
+            numMultiplications = 0
+
+            while (date.getFullYear() > 9999 || date.getFullYear() == NaN) {
+                timestampInt = timestampInt / 1000
+                date = new Date(timestampInt / 1000)
+                now *= 1000
+                numDivisions += 1
+            }
+
+            while (date.getFullYear() < 1975) {
+                timestampInt = timestampInt * 1000
+                date = new Date(timestampInt)
+                numMultiplications += 1
+                now /= 1000
+            }
+
+            document.getElementById("timestamp").textContent += timestamp 
+            document.getElementById("humantime").textContent += date
+            document.getElementById("units").textContent += divisionsToType[numDivisions] || multiplicationsToType[numMultiplications] || "Milliseconds"
+            document.getElementById("now").textContent += now
+            document.getElementById("delta").textContent += padDelta(timestampInt, now)
+        }
+    </script>
+</head>
+<body onload="getTimestamp()">
+
+
+<div class="wrapper style1">
+    <div class="container">                
+        <h1 id="humantime">HumanTime: </h1>          
+        <!-- <h1 id="timestamp">Timestamp: </h1> -->
+        <!-- <h1 id="now"      >Now       :</h1> -->
+        <table>
+            <tr>
+                <th>Timestamp</th>
+                <th id="timestamp"></th>
+            </tr>
+            <tr>
+                <th>Now</th>
+                <th id="now"></th>
+            </tr>            
+            <tr>
+                <th>Delta</th>
+                <th id="delta"></th>
+            </tr>            
+        </table>
+        <h2 id="units">Units: </h2>
+        
+</div>
+
+</body> 
