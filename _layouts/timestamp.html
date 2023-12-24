@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+
+<!--NOTE: This was partially generated with assistance from CoPilot! -->
 <style>
     table {
         /* width: 100%; */
@@ -15,7 +18,6 @@
 </style>
 
 <head>
-    <script src="assets/js/wasm/wasm_exec.js"></script>
     <script>
 
         divisionsToType = {
@@ -28,13 +30,14 @@
         }
 
         function padDelta(a,b) {
-            result = b - a
+            result = a - b
             expectedSize = Math.max(String(a).length, String(b).length)
             if (String(result).length < expectedSize) {
-                return "0".repeat(expectedSize - String(result).length) + result
+                // please add a negative 
+                
+                return  ((result < 0) ? "-" : "") +  "0".repeat(expectedSize - String(result).length) + Math.abs(result)
             }
             return String(result)
-
         }
         
         function getTimestamp() {
@@ -57,18 +60,18 @@
                 numDivisions += 1
             }
 
-            while (date.getFullYear() < 1975) {
+            if (date.getFullYear() < 1975) {
                 timestampInt = timestampInt * 1000
                 date = new Date(timestampInt)
                 numMultiplications += 1
-                now /= 1000
+                now =  Math.floor(now / 1000)
             }
 
             document.getElementById("timestamp").textContent += timestamp 
             document.getElementById("humantime").textContent += date
             document.getElementById("units").textContent += divisionsToType[numDivisions] || multiplicationsToType[numMultiplications] || "Milliseconds"
             document.getElementById("now").textContent += now
-            document.getElementById("delta").textContent += padDelta(timestampInt, now)
+            document.getElementById("delta").textContent += padDelta(parseInt(timestamp), now)
         }
     </script>
 </head>
@@ -82,19 +85,22 @@
         <!-- <h1 id="now"      >Now       :</h1> -->
         <table>
             <tr>
-                <th>Timestamp</th>
-                <th id="timestamp"></th>
+                <td>Timestamp</td>
+                <td id="timestamp"></td>
             </tr>
             <tr>
-                <th>Now</th>
-                <th id="now"></th>
+                <td>Now</td>
+                <td id="now"></td>
             </tr>            
             <tr>
-                <th>Delta</th>
-                <th id="delta"></th>
+                <td>Delta (ts - now)</td>
+                <td id="delta"></td>
+            </tr>            
+            <tr>
+                <td>Units</td>
+                <td id="units"></td>
             </tr>            
         </table>
-        <h2 id="units">Units: </h2>
         
 </div>
 {{.content}}
