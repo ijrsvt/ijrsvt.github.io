@@ -17,7 +17,7 @@ title: Ian Rodney's site
 subtitle: My online landing page?
 headline: Ian Rodney
 email: ian.rodney@hkn.mu
-description: Personal website for Ian Rodney. This site has (eventually will have) some basic personal background and photos.
+description: Personal website for Ian Rodney.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  ijrsvt
