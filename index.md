@@ -7,4 +7,4 @@ short_bio: Hello! Welcome to my highly under-developed website. I promised I wou
 mid_page_photo: "assets/photos/wing.jpg"
 ---
 
-I'm a 20-something Infrastructure Engineer working at [**Databricks**](https://databricks.com/). Before Databricks, I worked as a Security Engineer at [**Anyscale**](https://anyscale.com) and before that I studied, taught & researched at Berkeley. Beyond working, I run & bike quite a bit; I have an on-again, off-again relationship with photography and eventually want to share some of my work on this website. I'm an avid traveler, and usually find that I only pull out the camera when on the go.
+I'm a 20-something Infrastructure Engineer working at [**Databricks**](https://databricks.com/). I previously worked as a Security Engineer at [**Anyscale**](https://anyscale.com) and before that I studied, taught and researched at UC Berkeley. Beyond working, I run & bike quite a bit; I have an on-again, off-again relationship with photography and eventually want to share some of my work on this website. I'm an avid traveler, and usually find that I only pull out the camera when on the go.
