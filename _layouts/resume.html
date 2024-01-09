@@ -10,7 +10,7 @@ layout: base
 								<h2 class="major">{{ page.title }}</h2>
 								<article id="main">
 									<p>
-									I just finished my last semester of Undergrad at UC Berkeley, studiying <strike>EE</strike>CS. I am more of a systems person than anything, mostly focused on Computer Networking and Security.
+										{{ content }}
 									</p>
 									<section>
 										<header>
@@ -18,14 +18,14 @@ layout: base
 										</header>
 				<div class="row">
 					{% assign reslist = site.resitems | sort: "order" | reverse %}
-										{% for job in reslist %}
-											{% if job.category == "job" %}
-												<article class="col-4 col-12-mobile special">
+					{% for job in reslist %}
+						{% if job.category == "job" %}
+							<article id="{{ job.title }}-{{ job.company }}" class="col-4 col-12-mobile special">
 								<a href="#" class="image featured"><img src="{{ job.imageurl }}" alt="" style="max-width:100%;max-height:100px;width:auto"/></a>
 								<header>
-									<h3><a href="{{ job.website }}">{{ job.title }}</a></h3>
-									<h6 class="alt">{{ job.company }}</h3>
-									<h6 class="alt">{{ job.startdate }} -> {{ job.enddate }} </h3>
+									<h3 ><a href="{{ job.website }}">{{ job.title }}</a></h3>
+									<h6 class="alt">{{ job.company }}</h6>
+									<h6 class="alt">{{ job.startdate }} -> {{ job.enddate }} </h6>
 								</header>
 								<p>
 									{{ job.content }}

@@ -3,5 +3,4 @@ title: Resume
 layout: resume
 order: 3
 ---
-This is a incrementally updated resume that never stops growing. Unlike my professional resume (which is condensed to a page or so), this resume will keep expanding.
-
+This is my long-form resume that lacks the page-limit constraints of my professional resume. TL;DR I'm a security-focused software engineer focused on making infrastructure easy and safe to use.

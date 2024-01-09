@@ -19,12 +19,12 @@ layout: base
 	{% for job in reslist %}
 		{% if job.category == "job" %}
 			<article>
-				<a href="resume.html" class="image featured"><img src="{{ job.imageurl }}" alt="" style="max-height:100px;max-width:100%;width:auto;margin-left:auto;margin-right:auto;display:flex"/></a>
+				<a href="resume.html" class="image featured"><img src="{{ job.imageurl }}" alt="" style="max-height:50px;max-width:100%;width:auto;margin-left:auto;margin-right:auto;display:flex;margin-top:auto;"/></a>
 				<header>
 					{% if job.shortTitle %}
-					<h3><a href="{{ job.website }}">{{ job.shortTitle }}</a></h3>
+					<h3><a href="resume.html#{{ job.title }}-{{job.company}}">{{ job.shortTitle }}</a></h3>
 					{% else %}
-					<h3><a href="{{ job.website }}">{{ job.title }}</a></h3>
+					<h3><a href="resume.html#{{ job.title }}-{{job.company}}">{{ job.title }}</a></h3>
 					{% endif %}
 				</header>
 				<p> @ {{ job.company }} </p>

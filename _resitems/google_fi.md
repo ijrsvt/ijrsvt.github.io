@@ -6,7 +6,7 @@ startdate: May, 2018
 enddate: August, 2018
 order: 5
 website: https://fi.google.com
-imageurl: https://www.thelatenightlogic.com/wp-content/uploads/2017/04/Google-Fi-logo.jpg
+imageurl: https://storage.googleapis.com/googwebreview.appspot.com/uploads/fi/supernova.svg
 ---
 
 Worked on the Project Fi (now Google Fi) backend team.
